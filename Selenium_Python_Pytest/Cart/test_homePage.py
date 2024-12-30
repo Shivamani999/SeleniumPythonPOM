@@ -10,8 +10,10 @@ from utilities.BaseClass import BaseClass
 class Test_home(BaseClass):
 
     def test_home(self, multi):
-        homepage = homePage(self.driver)
+        logger = self.test_logging()
 
+        homepage = homePage(self.driver)
+        logger.info("Homepage appeared")
         homepage.name(multi["firstname"])
         homepage.email(multi["lastname"])
         homepage.password("123456")
@@ -20,7 +22,9 @@ class Test_home(BaseClass):
         homepage.submit()
         time.sleep(2)
         msg = homepage.successMsg()
+        logger.info(msg)
         assert ("Success" in msg)
+        logger.info("Assert Successfull")
         homepage.relaod()
 
     @pytest.fixture(params=homepageData.user_creds)
