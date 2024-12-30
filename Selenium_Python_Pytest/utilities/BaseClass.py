@@ -28,8 +28,8 @@ class BaseClass:
         logger.addHandler(fileHandler)
 
         logger.setLevel(logging.DEBUG)
-        logger.debug("A Debug statement")
-        logger.info("A Info logger")
+        # logger.debug("A Debug statement")
+        # logger.info("A Info logger")
         # logger.warning("A warning logger")
         # logger.error("A error logger")
         # logger.critical("A critical error logger")

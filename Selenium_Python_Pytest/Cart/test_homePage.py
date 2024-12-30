@@ -27,6 +27,6 @@ class Test_home(BaseClass):
         logger.info("Assert Successfull")
         homepage.relaod()
 
-    @pytest.fixture(params=homepageData.user_creds)
+    @pytest.fixture(params=homepageData.getTestData("Rahul"))
     def multi(self, request):
         return request.param
